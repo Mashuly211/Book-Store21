@@ -1,0 +1,44 @@
+extends ../pug/layout.pug
+
+block meta
+  title Книга
+  meta(name='description', content='')
+
+block content
+  .book-block
+
+    .book-block__images
+      .preview
+        img.preview__screen(src='img/screen.png', alt='screen')
+        img.preview__screen(src='img/screen.png', alt='screen')
+        img.preview__screen(src='img/screen.png', alt='screen')
+      .book__img
+        img.book__img-cover(src='img/superpotrebiteli.png', alt='Суперпотребители')
+    .book-block__header
+      p.book__info-author Эдди Юн
+      h2.book__info-name Суперпотребители
+      p.book__info-preview Кто это и почему они так важны для вашего бизнеса
+    .book-block__info
+      p.info-text Тут должно быть описание
+      .book__button
+          a.btn Добавить в корзину
+      .book__like
+        img.book__like-symbol
+        p.book__like-text 20 людям понравилась эта книга
+    .book-block__desc
+      h2.book__desc-title Короткое описание
+      p.book__desc-text В отличие от обычных покупателей суперпотребители очень заинтересованы в ваших товарах.
+      a.book__desc-link(href="index.html") Показать полностью
+      .book__desc-like
+        p Тут будут лайки
+  .more-books
+      h2.more-books__title Книги по тематике
+      a.more-books__link(href="index.html") Больше книг по теме
+      .more-books__card
+        +mini-card('Латеральная логика', 'book.html', 'img/book-lateralnaya-logika.jpg', 'Головоломный путь к нестардартному мышлению')
+        +mini-card('Путеводитель по лжи', 'book.html', 'img/putevoditel-po-lzhi.png', 'Критическое мышление в эпоху постправды')
+        +mini-card('Дао физики', 'book.html', 'img/dao-fiziki.png', 'Исследование параллей между современной физикой и восточной философией')
+        +mini-card('Не очевидно', 'book.html', 'img/book-ne-ochevidno.jpg', 'Как выявлять тренды раньше других')
+  +banner()
+
+

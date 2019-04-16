@@ -1,0 +1,28 @@
+.nav {
+  display: flex;
+
+  &__burger {
+
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__item--active {
+
+  }
+
+  &__item--phone {
+
+  }
+
+  &__item--cart {
+
+  }
+}

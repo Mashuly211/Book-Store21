@@ -1,0 +1,14 @@
+.page-header {
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  margin: 0 auto;
+
+  &__inner {
+    width: 100%;
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+  }
+}

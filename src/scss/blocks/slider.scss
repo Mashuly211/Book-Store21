@@ -1,0 +1,24 @@
+.slider {
+  background-color: $gray;
+  display: flex;
+  &__btn-prev {
+    width: 20%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    flex-direction: row;
+    width: 60%;
+    height: 100%;
+  }
+
+  &__btn-next {
+    width: 20%;
+    height: 100%;
+  }
+
+  &__image {
+    width: 302px;
+    height: auto;
+  }
+}

@@ -1,0 +1,34 @@
+extends ../pug/layout.pug
+
+block meta
+  title Книга
+  meta(name='description', content='')
+
+block content
+  .contacts
+    h2.contacts__title Контакты
+    ul.contacts__block
+        li.contacts__block-item Набережная реки Фонтанки, 202
+        li.contacts__block-item с 9:00 до 19:00 ежедневно
+        li.contacts__block-item +7(911) 123 45 67
+    .contacts__map
+    .contacts__form
+
+      h2.form__title Есть вопросы?
+      .form__descr
+        p Напишите нам на почту. Отвечаем в течение дня.
+      .form__container
+        .field-text.field-text--error.form__email
+          input.field-text__input(type='text', placeholder='Ваша почта')
+          .field-text__msg Вы не ввели почту
+        .field-text.form__msg
+          input.field-text__input(type='text', placeholder='Сообщение')
+        .field-action.form__action
+          button.btn Отправить
+      .field-checkbox.field-checkbox--error.form__checkbox
+        input.field-checkbox__input(type='checkbox', id='agreement')
+        label.field-checkbox__pseudo-checkbox(for='agreement')
+        span.field-checkbox__text #[label(for='agreement') Я согласен(-на) с] #[a(href='') политикой конфиденциальности] и #[a(href='') правилами обработки данных]
+
+
+    +banner()
