@@ -1,7 +1,6 @@
 .delivery {
   margin: 0 auto;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 $indent;
   border: 5px solid $gray;
 
   &__title {

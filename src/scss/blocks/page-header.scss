@@ -1,6 +1,6 @@
 .page-header {
   width: 100%;
-  background-color: white;
+  background-color: $absolutely-white;
   border: 1px solid black;
   display: flex;
   margin: 0 auto;
@@ -10,5 +10,36 @@
     display: inline-block;
     display: flex;
     flex-direction: row;
+    padding: 0 $indent;
+  }
+
+  &__logo {
+
+  }
+
+  &__cart {
+    button.social-btn(type='button')
+      svg(width='16', height='16')
+        use(xlink:href='img/sprite.svg#dislike')
+  }
+
+  &__phone {
+
+  }
+
+  &__page-header__open-time {
+    color: $gray;
+  }
+
+  &__main-nav-list {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000000;
   }
 }

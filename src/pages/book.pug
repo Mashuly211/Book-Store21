@@ -9,9 +9,9 @@ block content
 
     .book-block__images
       .preview
-        img.preview__screen(src='img/screen.png', alt='screen')
-        img.preview__screen(src='img/screen.png', alt='screen')
-        img.preview__screen(src='img/screen.png', alt='screen')
+        img.preview__screen(src='img/background/screen.png', alt='screen')
+        img.preview__screen(src='img/background/screen.png', alt='screen')
+        img.preview__screen(src='img/background/screen.png', alt='screen')
       .book__img
         img.book__img-cover(src='img/superpotrebiteli.png', alt='Суперпотребители')
     .book-block__header
@@ -32,13 +32,13 @@ block content
       .book__desc-like
         p Тут будут лайки
   .more-books
-      h2.more-books__title Книги по тематике
-      a.more-books__link(href="index.html") Больше книг по теме
-      .more-books__card
-        +mini-card('Латеральная логика', 'book.html', 'img/book-lateralnaya-logika.jpg', 'Головоломный путь к нестардартному мышлению')
-        +mini-card('Путеводитель по лжи', 'book.html', 'img/putevoditel-po-lzhi.png', 'Критическое мышление в эпоху постправды')
-        +mini-card('Дао физики', 'book.html', 'img/dao-fiziki.png', 'Исследование параллей между современной физикой и восточной философией')
-        +mini-card('Не очевидно', 'book.html', 'img/book-ne-ochevidno.jpg', 'Как выявлять тренды раньше других')
+    h2.more-books__title Книги по тематике
+    a.more-books__link(href="index.html") Больше книг по теме
+    .more-books__block
+      +mini-card('Латеральная логика', 'book.html', 'img/books/book-lateralnaya-logika.jpg', 'Головоломный путь к нестардартному мышлению')
+      +mini-card('Путеводитель по лжи', 'book.html', 'img/books/putevoditel-po-lzhi.png', 'Критическое мышление в эпоху постправды')
+      +mini-card('Дао физики', 'book.html', 'img/books/dao-fiziki.png', 'Исследование параллей между современной физикой и восточной философией')
+      +mini-card('Не очевидно', 'book.html', 'img/books/book-ne-ochevidno.jpg', 'Как выявлять тренды раньше других')
   +banner()
 
 

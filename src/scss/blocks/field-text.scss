@@ -4,7 +4,6 @@
 
   position: relative;
   display: block;
-  padding: 18px 0 0;
 
   &__input {
     display: inline-block;
@@ -13,6 +12,7 @@
     margin: 0;
     border: none;
     border-bottom: 4px solid $gray-light;
+    background-color: $gray-lightest;
     padding: 6px 0;
     font-size: $font-size;
     font-family: inherit;

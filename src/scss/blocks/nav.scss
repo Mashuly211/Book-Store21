@@ -10,19 +10,11 @@
     flex-direction: row;
   }
 
-  &__item {
+  &__list--item {
     list-style-type: none;
   }
 
-  &__item--active {
-
-  }
-
-  &__item--phone {
-
-  }
-
-  &__item--cart {
+  &__list--item-active {
 
   }
 }
