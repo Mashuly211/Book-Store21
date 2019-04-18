@@ -27,6 +27,17 @@ function deploy(cb) {
 }
 exports.deploy = deploy;
 
+function generateSvgSprites() {
+  return src(dir.src + 'img/sprite-svg/*.svg')
+    .pipe(svgmin(function () {
+        return { plugins: [{ cleanupIDs: { minify: true } }] }
+      }))
+      .pipe(svgstore({ inlineSvg: true }))
+      .pipe(rename('sprite.svg'))
+      .pipe(dest(dir.build + 'img/'));
+}
+exports.generateSvgSprites = generateSvgSprites;
+
 function compilePug() {
   return src(dir.src + 'pages/**/*.pug')
     .pipe(plumber({
@@ -94,7 +105,10 @@ function copyJsVendors() {
 }
 
 function copyImages() {
-  return src(dir.src + 'img/*.{jpg,jpeg,png,svg,webp,gif}')
+  return src([
+      dir.src + 'img/**/*.{jpg,jpeg,png,svg,webp,gif}',
+      dir.src + 'img/books/*.{jpg,jpeg,png,svg,webp,gif}',
+    ])
     .pipe(dest(dir.build + 'img/'));
 }
 exports.copyImages = copyImages;

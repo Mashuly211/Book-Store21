@@ -18,9 +18,7 @@
   }
 
   &__cart {
-    button.social-btn(type='button')
-      svg(width='16', height='16')
-        use(xlink:href='img/sprite.svg#dislike')
+
   }
 
   &__phone {
