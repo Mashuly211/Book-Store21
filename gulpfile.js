@@ -21,6 +21,10 @@ const concat = require('gulp-concat');
 const pug = require('gulp-pug');
 const prettyHtml = require('gulp-pretty-html');
 const replace = require('gulp-replace');
+const responsive = require('gulp-responsive');
+const rename = require('gulp-rename');
+const svgstore = require('gulp-svgstore');
+const svgmin = require('gulp-svgmin');
 
 function deploy(cb) {
   ghPages.publish(path.join(process.cwd(), './build'), cb);
@@ -30,13 +34,26 @@ exports.deploy = deploy;
 function generateSvgSprites() {
   return src(dir.src + 'img/sprite-svg/*.svg')
     .pipe(svgmin(function () {
-        return { plugins: [{ cleanupIDs: { minify: true } }] }
-      }))
-      .pipe(svgstore({ inlineSvg: true }))
-      .pipe(rename('sprite.svg'))
-      .pipe(dest(dir.build + 'img/'));
+      return { plugins: [{ cleanupIDs: { minify: true } }] }
+    }))
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite.svg'))
+    .pipe(dest(dir.build + 'img/'));
 }
 exports.generateSvgSprites = generateSvgSprites;
+
+function imagesConvertToWebp() {
+  return src('src/img/books_all/*.jpg')
+    .pipe(responsive({
+      '*.jpg': {},
+    },{
+      format: 'webp',
+      quality: 75,
+      progressive: true,
+    }))
+    .pipe(dest('src/img/books_all/'));
+}
+exports.imagesConvertToWebp = imagesConvertToWebp;
 
 function compilePug() {
   return src(dir.src + 'pages/**/*.pug')
@@ -71,7 +88,7 @@ function compileStyles() {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer({browsers: ['last 2 version']}),
+      autoprefixer({browsers: ['last 2 version'], grid: true}),
     ]))
     .pipe(sourcemaps.write('/'))
     .pipe(dest(dir.build + 'css/'))
@@ -140,6 +157,7 @@ function serve() {
     dir.src + 'pug/*.pug',
   ], compilePug);
   watch(dir.src + 'js/*.js', processJs);
+  watch(dir.src + 'img/sprite-svg/*.svg', generateSvgSprites);
   watch(dir.src + 'img/*.{jpg,jpeg,png,svg,webp,gif}', copyImages);
   watch([
     dir.build + '*.html',
@@ -150,6 +168,6 @@ function serve() {
 
 exports.default = series(
   clean,
-  parallel(compileStyles, compilePug, processJs, copyJsVendors, copyImages, copyFonts),
+  parallel(compileStyles, compilePug, generateSvgSprites, processJs, copyJsVendors, copyImages, copyFonts),
   serve
 );

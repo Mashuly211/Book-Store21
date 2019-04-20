@@ -1,14 +1,15 @@
 .btn {
   display: inline-block;
-  vertical-align: middle;
-  padding: 6px 20px;
-  width: 100%;
+  width: 330px;
   border: none;
   border-radius: $border-radius;
+  padding: 15px 70px;
+  margin: 15px 0;
+  font-family: inherit;
   font-size: $font-size;
-  font-weight: 400;
+  font-weight: 500;
   color: #fff;
-  background-color: #333333;
+  background: #000;
   text-decoration: none;
   cursor: pointer;
   user-select: none;
@@ -16,7 +17,6 @@
 
   &:hover,
   &:focus {
-    background: #cc6699;
-    color: #fff;
+    background-color: #a81e5c;
   }
 }
