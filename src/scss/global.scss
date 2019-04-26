@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-family: $font-family;
+  font-size: $font-size-s;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: $link-color;
+}
+
+a:visited {
+  background-color: $danger-color;
+}
+
+img {
+  height: auto;
+}
+
+button:hover {
+  outline: 0;
+  background-color: $light-color;
+}

@@ -24,10 +24,32 @@ html(class='page  no-js', lang='ru')
 
         header.page-header
           .page-header__inner
-            a.page-header__logo(href='/') Book Store
+            a.page-header__logo(href='index.html')
+              svg(width='127', height="14")
+                use(xlink:href='img/sprite.svg#logo')
             p.page-header__open-time  с 9:00 до 19:00
+
             nav.main-nav
-              button.burger.main-nav__burger(aria-label='Показать меню') #[span]
+              button.main-nav__burger
+                span.line
+                span.line
+                span.line
+              .main-nav__burger(style='display: none;')
+                span.close
+              .main-nav__burger-menu(style='display: none;')
+                ul.main-nav__burger-list
+                  li.main-nav__burger-item
+                   a.main-nav__burger-link(href='index.html') Книги
+                  li.main-nav__burger-item
+                   a.main-nav__burger-link(href='recommendations.html') Рекомендации
+                  li.main-nav__burger-item
+                    a.main-nav__burger-link(href='contacts.html') Контакты
+                  li.main-nav__burger-item
+                    a.main-nav__burger-linktel(href='tel:+78005008020')
+                      svg(width='16', height='16')
+                        use(xlink:href='img/sprite.svg#phone')
+                      |                 8 800 500-80-20
+
               ul.main-nav__list
                 li.main-nav__item
                   a(href='index.html') Книги
@@ -35,14 +57,27 @@ html(class='page  no-js', lang='ru')
                   a(href='recommendations.html') Рекомендации
                 li.main-nav__item
                   a(href='contacts.html') Контакты
-                li.main-nav__item.main-nav__item--phone
-                  a(href='tel:+78005008020')
-                    svg(width='16', height='16')
-                      use(xlink:href='img/sprite.svg#phone')
-                    span.main-nav__phone-number +7 800 500-80-20
-                a.page-header__cart
-                  svg(width='16', height='16')
-                    use(xlink:href='img/sprite.svg#cart')
+
+            .page-header__icon
+              button.page-header__phone(href='tel:+78005008020')
+                svg(width='16', height='16')
+                  use(xlink:href='img/sprite.svg#phone')
+                //- span.main-nav__phone-number +7 800 500-80-20
+              a.page-header__cart
+                svg(width='16', height='16')
+                  use(xlink:href='img/sprite.svg#cart')
+
+              //- nav.main-burger
+              //-   a#toggler.toggler(href='')
+              //-   span
+              //- ul#main.main
+              //-   li.main__item
+              //-     a(href='') Книги
+              //-   li.main__item
+              //-     a(href='') Рекомендации
+              //-   li.main__item
+              //-     a(href='') Контакты
+
 
         block content
           p Cодержимое
@@ -50,7 +85,9 @@ html(class='page  no-js', lang='ru')
 
       footer.page-footer
         .page-footer__inner
-          a.logo(href='/') Book Store
+          a.logo(href='index.html')
+            svg(width='127', height="14")
+                use(xlink:href='img/sprite.svg#logo')
           p.page-footer__open-time  с 9:00 до 19:00
           nav.main-nav.main-nav--footer
             ul.main-nav__list

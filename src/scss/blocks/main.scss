@@ -1,0 +1,43 @@
+.main {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: none;
+
+  &--visible {
+    display: block;
+  }
+
+  @media (min-width: $screen-sm) {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  &__item {
+    display: block;
+    text-align: center;
+
+    a {
+      display: block;
+      padding: 0 1em;
+      height: 3em;
+      line-height: 3;
+      background-color: $main-color;
+      color: $text-color;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: 1px;
+      text-align: right;
+    }
+  }
+}
