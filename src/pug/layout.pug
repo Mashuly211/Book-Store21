@@ -30,26 +30,6 @@ html(class='page  no-js', lang='ru')
             p.page-header__open-time  с 9:00 до 19:00
 
             nav.main-nav
-              button.main-nav__burger
-                span.line
-                span.line
-                span.line
-              .main-nav__burger(style='display: none;')
-                span.close
-              .main-nav__burger-menu(style='display: none;')
-                ul.main-nav__burger-list
-                  li.main-nav__burger-item
-                   a.main-nav__burger-link(href='index.html') Книги
-                  li.main-nav__burger-item
-                   a.main-nav__burger-link(href='recommendations.html') Рекомендации
-                  li.main-nav__burger-item
-                    a.main-nav__burger-link(href='contacts.html') Контакты
-                  li.main-nav__burger-item
-                    a.main-nav__burger-linktel(href='tel:+78005008020')
-                      svg(width='16', height='16')
-                        use(xlink:href='img/sprite.svg#phone')
-                      |                 8 800 500-80-20
-
               ul.main-nav__list
                 li.main-nav__item
                   a(href='index.html') Книги
@@ -57,27 +37,27 @@ html(class='page  no-js', lang='ru')
                   a(href='recommendations.html') Рекомендации
                 li.main-nav__item
                   a(href='contacts.html') Контакты
-
-            .page-header__icon
-              button.page-header__phone(href='tel:+78005008020')
-                svg(width='16', height='16')
-                  use(xlink:href='img/sprite.svg#phone')
-                //- span.main-nav__phone-number +7 800 500-80-20
+                li.main-nav__item.main-nav__item--phone
+                  a(href='tel:+78005008020')
+                    svg(width='16', height='16')
+                      use(xlink:href='img/sprite.svg#phone')
+                    span.main-nav__phone-number +7 800 500-80-20
               a.page-header__cart
                 svg(width='16', height='16')
                   use(xlink:href='img/sprite.svg#cart')
 
-              //- nav.main-burger
-              //-   a#toggler.toggler(href='')
-              //-   span
-              //- ul#main.main
-              //-   li.main__item
-              //-     a(href='') Книги
-              //-   li.main__item
-              //-     a(href='') Рекомендации
-              //-   li.main__item
-              //-     a(href='') Контакты
-
+            nav.main-burger
+              a#toggler.toggler(href='')
+                span
+            ul#main.main
+              li.main__item
+                a(href='index.html') Книги
+              li.main__item
+                a(href='recommendations.html') Рекомендации
+              li.main__item
+                a(href='contacts.html') Контакты
+              li.main__item.main__phone
+                a(href='tel: +78005008020') 8 800 500-80-20
 
         block content
           p Cодержимое

@@ -2,7 +2,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 80px;
+  margin-top: 60px;
   position: absolute;
   top: 0;
   right: 0;
@@ -26,18 +26,33 @@
   &__item {
     display: block;
     text-align: center;
+    width: 50%;
+    margin-left: 50%;
+    background-color: $light-color;
 
     a {
       display: block;
       padding: 0 1em;
       height: 3em;
       line-height: 3;
-      background-color: $main-color;
       color: $text-color;
       font-weight: 700;
       text-decoration: none;
       margin-bottom: 1px;
       text-align: right;
+    }
+
+    .svg {
+      display: block;
+      position: absolute;
+      margin-left: 0;
+    }
+  }
+
+  &__phone {
+
+    a {
+      color: $link-color;
     }
   }
 }

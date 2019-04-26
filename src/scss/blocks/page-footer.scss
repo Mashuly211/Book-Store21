@@ -8,6 +8,11 @@
     justify-content: space-around;
   }
 
+  @media (min-width: 320px) and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
+
    * a {
     display: flex;
     text-transform: uppercase;

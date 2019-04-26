@@ -9,4 +9,8 @@
     position: static;
     height: auto;
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
